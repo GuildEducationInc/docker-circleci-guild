@@ -1,0 +1,5 @@
+FROM ruby:2.4.3
+LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
+
+RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/local/bin/cc-test-reporter && \
+    chmod +x /usr/local/bin/cc-test-reporter
