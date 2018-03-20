@@ -23,17 +23,20 @@ function generateDockerfile {
 VERSIONS=`cat versions.json`
 RUBY_VERSIONS=`echo ${VERSIONS} | jq -r '.ruby.versions[]'`
 NODE_VERSIONS=`echo ${VERSIONS} | jq -r '.node.versions[]'`
+CC_TEST_REPORTER_VERSION=`echo ${VERSIONS} | jq -r '.cc_test_reporter_version'`
 
 # Drop a Dockerfile for each Ruby version
 mkdir -p ruby && rm -rf ruby/*
 for version in ${RUBY_VERSIONS}; do
   generateDockerfile 'ruby' ${version}
+  sed -E -i '' 's/\$CC_TEST_REPORTER_VERSION/'"${CC_TEST_REPORTER_VERSION}"'/' ruby/${version}/Dockerfile
 done
 
 # Drop a Dockerfile for each Node version
 mkdir -p node && rm -rf node/*
 for version in ${NODE_VERSIONS}; do
   generateDockerfile 'node' ${version}
+  sed -E -i '' 's/\$CC_TEST_REPORTER_VERSION/'"${CC_TEST_REPORTER_VERSION}"'/' node/${version}/Dockerfile
 done
 
 # Drop a Dockerfile for each Ruby + Node version (eg Rails)
