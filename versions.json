@@ -1,5 +1,6 @@
 {
   "cc_test_reporter_version": "0.5.1",
+  "chromedriver_version": "2.38", 
   "ruby": {
     "versions": [
       "2.4.2",
