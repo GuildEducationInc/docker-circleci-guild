@@ -2,7 +2,7 @@ FROM guildeducation/ruby:2.5.1
 LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
 
 ENV NODE_VERSION=9.7.1
-ENV YARN_VERSION=1.5.1
+ENV YARN_VERSION=1.6.0
 ENV CHROMEDRIVER_VERSION=2.38
 
 RUN node_main_version=`echo 9.7.1| cut -d'.' -f 1` && \

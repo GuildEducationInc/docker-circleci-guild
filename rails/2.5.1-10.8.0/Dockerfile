@@ -1,11 +1,11 @@
-FROM guildeducation/ruby:2.4.4
+FROM guildeducation/ruby:2.5.1
 LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
 
-ENV NODE_VERSION=9.11.1
-ENV YARN_VERSION=1.6.0
+ENV NODE_VERSION=10.8.0
+ENV YARN_VERSION=1.9.4
 ENV CHROMEDRIVER_VERSION=2.38
 
-RUN node_main_version=`echo 9.11.1| cut -d'.' -f 1` && \
+RUN node_main_version=`echo 10.8.0| cut -d'.' -f 1` && \
     curl -o nodejs.deb "https://deb.nodesource.com/node_${node_main_version}.x/pool/main/n/nodejs/nodejs_${NODE_VERSION}-1nodesource1_amd64.deb" && \
     dpkg -i nodejs.deb && \
     rm nodejs.deb && \
