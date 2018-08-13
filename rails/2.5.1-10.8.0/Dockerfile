@@ -3,7 +3,7 @@ LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
 
 ENV NODE_VERSION=10.8.0
 ENV YARN_VERSION=1.9.4
-ENV CHROMEDRIVER_VERSION=2.38
+ENV CHROMEDRIVER_VERSION=2.41
 
 RUN node_main_version=`echo 10.8.0| cut -d'.' -f 1` && \
     curl -o nodejs.deb "https://deb.nodesource.com/node_${node_main_version}.x/pool/main/n/nodejs/nodejs_${NODE_VERSION}-1nodesource1_amd64.deb" && \
