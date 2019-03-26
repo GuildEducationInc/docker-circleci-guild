@@ -1,0 +1,19 @@
+# This is pinned to match the AWS Lambda node 8.10 runtime, see: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
+FROM node:8.10 
+LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
+
+ENV CC_TEST_REPORTER_VERSION=$CC_TEST_REPORTER_VERSION
+ENV DOCKERIZE_VERSION v0.3.0
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+    tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+    rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+    apt-get -y -qq update && \
+    apt-get -y install zip && \
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python get-pip.py && \
+    apt-get -y install python-dev && \
+    pip install awscli==1.16.36 --upgrade --user && \
+    pip install aws-sam-cli==0.6.0 && \
+    echo 'export PATH=~/.local/bin/:$PATH' >> $BASH_ENV && \
+    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_TEST_REPORTER_VERSION}-linux-amd64 > /usr/local/bin/cc-test-reporter && \
+    chmod +x /usr/local/bin/cc-test-reporter
