@@ -1,5 +1,5 @@
 # This is pinned to match the AWS Lambda node 8.10 runtime, see: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
-FROM guildeducation/node:8.10 
+FROM guildeducation/node:8.10.0
 
 ENV DOCKERIZE_VERSION v0.3.0
 # sed command is workaround for https://github.com/debuerreotype/docker-debian-artifacts/issues/66
@@ -14,5 +14,4 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list && \
     apt-get -y install python-dev && \
     pip install awscli==1.16.36 --upgrade --user && \
     pip install aws-sam-cli==0.6.0 && \
-    echo 'export PATH=~/.local/bin/:$PATH' >> $BASH_ENV && \
     rm -rf /var/lib/apt/lists/*
