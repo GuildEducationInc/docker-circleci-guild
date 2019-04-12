@@ -2,6 +2,11 @@
 
 This repository holds Docker images intended to be used in CI. The images are modified from the base Docker images with additional tooling for Guild's CI usage
 
+## Prereqs
+- install `jq`
+  - OS X: `brew install jq`
+  - Debian/Ubuntu: `apt-get install jq`
+
 ## Image Types
 
 ### Ruby
