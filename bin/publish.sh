@@ -9,7 +9,7 @@ if [ -z ${TARGET_DIRECTORY} ]; then
   echo "TARGET_DIRECTORY is not set!"
   exit 1
 fi
-cd ${TARGET_DIRECTORY}}
+cd ${TARGET_DIRECTORY}
 
 DOCKER_IMAGE_NAME=${DOCKER_IMAGE_NAME:="guildeducation/${PWD##*/}"}
 
