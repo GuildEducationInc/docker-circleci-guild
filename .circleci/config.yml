@@ -1,9 +1,14 @@
 defaults: &defaults
   executor: docker-publish/docker
+  working_directory: ~/docker-circleci-guild
   steps:
     - checkout
     - setup_remote_docker:
         docker_layer_caching: true
+    - run:
+        name: Move to TARGET_DIRECTORY
+        command: |
+          cd ${TARGET_DIRECTORY}
     - run:
         name: Build Docker images
         command: |
@@ -21,25 +26,20 @@ orbs:
 jobs:
   build_and_publish_ruby_images:
     <<: *defaults
-    working_directory: ruby
     environment:
-      DOCKER_IMAGE_NAME: guildeducation/ruby
+      TARGET_DIRECTORY: ruby
   build_and_publish_node_images:
     <<: *defaults
-    working_directory: node
     environment:
-      DOCKER_IMAGE_NAME: guildeducation/node
+      TARGET_DIRECTORY: node
   build_and_publish_rails_images:
     <<: *defaults
-    working_directory: rails
     environment:
-      DOCKER_IMAGE_NAME: guildeducation/rails
+      TARGET_DIRECTORY: rails
   build_and_publish_node_lambda:
     <<: *defaults
-    working_directory: node-lambda
     environment:
-      DOCKER_IMAGE_NAME: guildeducation/node-lambda
-      DOCKER_TAG: latest
+      TARGET_DIRECTORY: node-lambda
 
 workflows:
   build_and_publish_docker_images:
