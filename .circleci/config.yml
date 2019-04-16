@@ -1,9 +1,10 @@
 defaults: &defaults
   docker:
-    - image: circleci/node
+    - image: circleci/python
   steps:
     - checkout
-    - setup_remote_docker
+    - setup_remote_docker:
+        docker_layer_caching: true
     - run:
         name: Build Docker images
         command: |
