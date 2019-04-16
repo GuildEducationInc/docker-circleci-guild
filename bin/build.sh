@@ -1,5 +1,16 @@
 #!/bin/bash
 
+if [[ ${CIRCLECI} != true ]]; then
+  echo "This script is intended to run in CircleCI only!"
+  exit 1
+fi
+
+if [ -z ${TARGET_DIRECTORY} ]; then
+  echo "TARGET_DIRECTORY is not set!"
+  exit 1
+fi
+cd ${TARGET_DIRECTORY}
+
 DOCKER_IMAGE_NAME=${DOCKER_IMAGE_NAME:="guildeducation/${PWD##*/}"}
 
 # Check if we are in a single Dockerfile directory or multiple sub-tags
