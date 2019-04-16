@@ -1,0 +1,49 @@
+defaults: &defaults
+  executor: docker-publish/docker
+  working_directory: ~/docker-circleci-guild
+  steps:
+    - checkout
+    - setup_remote_docker:
+        docker_layer_caching: true
+    - docker-publish/check
+    - run:
+        name: Build Docker images
+        command: |
+          bin/build.sh
+    - run:
+        name: Publish Docker images (only on master)
+        command: |
+          if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+            bin/publish.sh
+          fi
+
+version: 2.1
+
+orbs:
+  docker-publish: circleci/docker-publish@0.1.6
+
+jobs:
+  build_and_publish_ruby_images:
+    <<: *defaults
+    environment:
+      TARGET_DIRECTORY: ruby
+  build_and_publish_node_images:
+    <<: *defaults
+    environment:
+      TARGET_DIRECTORY: node
+  build_and_publish_rails_images:
+    <<: *defaults
+    environment:
+      TARGET_DIRECTORY: rails
+  build_and_publish_node_lambda:
+    <<: *defaults
+    environment:
+      TARGET_DIRECTORY: node-lambda
+
+workflows:
+  build_and_publish_docker_images:
+    jobs:
+      - build_and_publish_ruby_images
+      - build_and_publish_node_images
+      - build_and_publish_rails_images
+      - build_and_publish_node_lambda
