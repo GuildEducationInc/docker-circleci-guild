@@ -1,0 +1,59 @@
+defaults: &defaults
+  docker:
+    - image: debian
+  steps:
+    - checkout
+    - setup_remote_docker
+    - run:
+        name: Build Docker images
+        command: |
+          bin/build.sh
+    # - run:
+    #     name: Publish Docker images
+    #     command: |
+    #       bin/publish.sh
+
+version: 2.1
+
+jobs:
+  build_and_publish_ruby_images:
+    <<: *defaults
+    working_directory: ruby
+    environment:
+      DOCKER_IMAGE_NAME: guildeducation/ruby
+  build_and_publish_node_images:
+    <<: *defaults
+    working_directory: node
+    environment:
+      DOCKER_IMAGE_NAME: guildeducation/node
+  build_and_publish_rails_images:
+    <<: *defaults
+    working_directory: rails
+    environment:
+      DOCKER_IMAGE_NAME: guildeducation/rails
+  build_and_publish_node_lambda:
+    <<: *defaults
+    working_directory: node-lambda
+    environment:
+      DOCKER_IMAGE_NAME: guildeducation/node-lambda
+      DOCKER_TAG: latest
+
+workflows:
+  build_and_publish_docker_images:
+    jobs:
+      - build_and_publish_ruby_images:
+          # filters:
+          #   branches:
+          #     only: master
+      - build_and_publish_node_images:
+          # filters:
+          #   branches:
+          #     only: master
+      - build_and_publish_rails_images:
+          # filters:
+          #   branches:
+          #     only: master
+      - build_and_publish_node_lambda:
+          # filters:
+          #   branches:
+          #     only: master
