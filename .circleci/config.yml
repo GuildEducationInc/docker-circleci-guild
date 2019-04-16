@@ -5,14 +5,17 @@ defaults: &defaults
     - checkout
     - setup_remote_docker:
         docker_layer_caching: true
+    - docker-publish/check
     - run:
         name: Build Docker images
         command: |
           bin/build.sh
-    # - run:
-    #     name: Publish Docker images
-    #     command: |
-    #       bin/publish.sh
+    - run:
+        name: Publish Docker images (only on master)
+        command: |
+          if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+            bin/publish.sh
+          fi
 
 version: 2.1
 
@@ -40,23 +43,7 @@ jobs:
 workflows:
   build_and_publish_docker_images:
     jobs:
-      - build_and_publish_ruby_images:
-          filters:
-            branches:
-              # only: master
-              only: /.*/
-      - build_and_publish_node_images:
-          filters:
-            branches:
-              # only: master
-              only: /.*/
-      - build_and_publish_rails_images:
-          filters:
-            branches:
-              # only: master
-              only: /.*/
-      - build_and_publish_node_lambda:
-          filters:
-            branches:
-              # only: master
-              only: /.*/
+      - build_and_publish_ruby_images
+      - build_and_publish_node_images
+      - build_and_publish_rails_images
+      - build_and_publish_node_lambda
