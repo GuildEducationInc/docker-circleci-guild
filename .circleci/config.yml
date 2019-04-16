@@ -5,7 +5,6 @@ defaults: &defaults
     - checkout
     - setup_remote_docker:
         docker_layer_caching: true
-    - docker-publish/check
     - run:
         name: Build Docker images
         command: |
