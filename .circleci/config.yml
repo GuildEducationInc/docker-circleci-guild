@@ -39,6 +39,10 @@ jobs:
     <<: *defaults
     environment:
       TARGET_DIRECTORY: node-lambda
+  build_and_publish_python_lambda:
+    <<: *defaults
+    environment:
+      TARGET_DIRECTORY: python-lambda
 
 workflows:
   build_and_publish_docker_images:
@@ -47,3 +51,4 @@ workflows:
       - build_and_publish_node_images
       - build_and_publish_rails_images
       - build_and_publish_node_lambda
+      - build_and_publish_python_lambda
