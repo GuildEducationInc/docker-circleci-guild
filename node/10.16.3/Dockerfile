@@ -1,4 +1,4 @@
-FROM node:9.6.1
+FROM node:10.16.3
 LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
 
 ENV CC_TEST_REPORTER_VERSION=0.7.0
