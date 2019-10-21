@@ -1,3 +1,6 @@
+# This Dockerfile is labeled latest to support projects that were set up
+# when the node-lambda folder didn't have different node versions within it
+#
 # This is pinned to match the AWS Lambda node 8.10 runtime, see: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
 FROM guildeducation/node:8.10.0
 
