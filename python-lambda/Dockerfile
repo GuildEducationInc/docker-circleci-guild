@@ -8,4 +8,4 @@ RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_T
     pip install -U --user pytest==5.0.1 && \
     pip install -U --user boto3==1.9.192 && \
     pip install -U --user awscli==1.16.202 && \
-    pip install -U --user aws-sam-cli==0.18.0
+    pip install -U --user aws-sam-cli==0.23.0
