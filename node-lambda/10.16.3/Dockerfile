@@ -2,7 +2,7 @@
 FROM guildeducation/node:10.16.3
 
 ENV DOCKERIZE_VERSION v0.3.0
-ENV TERRAFORM_VERSION 0.12.12
+ENV TERRAFORM_VERSION 0.12.13
 ENV AUTH0_PROVIDER_VERSION v0.2.1
 
 # sed command is workaround for https://github.com/debuerreotype/docker-debian-artifacts/issues/66
