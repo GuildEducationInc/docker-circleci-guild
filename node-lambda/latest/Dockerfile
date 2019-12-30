@@ -6,7 +6,7 @@ FROM guildeducation/node:8.10.0
 
 ENV DOCKERIZE_VERSION v0.3.0
 ENV TERRAFORM_VERSION 0.12.13
-ENV AUTH0_PROVIDER_VERSION v0.2.1
+ENV AUTH0_PROVIDER_VERSION v0.4.2
 
 # sed command is workaround for https://github.com/debuerreotype/docker-debian-artifacts/issues/66
 RUN sed -i '/jessie-updates/d' /etc/apt/sources.list && \

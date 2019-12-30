@@ -4,7 +4,7 @@ LABEL maintainer "Guild Engineering <engineering@guildeducation.com>"
 ENV CC_TEST_REPORTER_VERSION 0.7.0
 ENV DOCKERIZE_VERSION v0.3.0
 ENV TERRAFORM_VERSION 0.12.13
-ENV AUTH0_PROVIDER_VERSION v0.2.1
+ENV AUTH0_PROVIDER_VERSION v0.4.2
 ENV PATH "$PATH:/root/.local/bin:/root/.yarn/bin:/root/.config/yarn/global/node_modules/.bin"
 
 RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_TEST_REPORTER_VERSION}-linux-amd64 > /usr/local/bin/cc-test-reporter && \
