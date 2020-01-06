@@ -52,7 +52,10 @@ also add a mapping for the appropriate version of yarn to be installed.
 
 From there, run `bin/update.sh`. New Dockerfiles will be generated. Check all of these into source control. You'll then 
 need to go into the Docker Hub settings for the appropriate repositories (ruby, node, rails) and update the autobuild 
-settings for the new Dockerfile locations/tags
+settings for the new Dockerfile locations/tags.  
+
+**Note:** the script uses the `sed` command, and will fail if using an alternative version (e.g., GNU sed) instead of 
+the native MacOS version. 
 
 ## Releasing New Versions
 
