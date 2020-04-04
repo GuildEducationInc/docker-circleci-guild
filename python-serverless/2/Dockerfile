@@ -7,7 +7,6 @@ RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_T
     sudo mv ~/cc-test-reporter /usr/local/bin/cc-test-reporter && \
     sudo apt-get install nodejs && \
     sudo apt-get install npm && \
-    pip install -U --upgrade pip && \
     pip install -U --user pytest==5.0.1 && \
     pip install -U --user boto3==1.12.36 && \
     pip install -U --user awscli==1.18.36 && \
