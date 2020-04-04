@@ -8,9 +8,9 @@ RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_T
     sudo apt-get install nodejs && \
     sudo apt-get install npm && \
     pip install -U --user pytest==5.0.1 && \
-    pip install -U --user boto3==1.9.192 && \
-    pip install -U --user awscli==1.16.202 && \
-    pip install -U --user aws-sam-cli==0.23.0
+    pip install -U --user boto3==1.15.36 && \
+    pip install -U --user awscli==1.18.36 && \
+    pip install -U --user aws-sam-cli==0.47.0
     pip install -U --user pyscopg2-binary==2.8.4 && \
     echo "Installing CDK" && \
     sudo npm install -g aws-cdk && \
