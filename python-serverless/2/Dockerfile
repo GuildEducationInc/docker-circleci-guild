@@ -29,4 +29,4 @@ RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_T
     pip install -U --user aws-cdk.aws_secretsmanager && \
     pip install -U --user aws-cdk.aws_sns && \
     pip install -U --user aws-cdk.aws_sqs && \
-    pip install -U --user aws-cdk.aws_ssm && \
+    pip install -U --user aws-cdk.aws_ssm
