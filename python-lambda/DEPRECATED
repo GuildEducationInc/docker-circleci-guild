@@ -1,2 +1,2 @@
 This image is deprecated use most recent version of python-serverless instead:
-- image: guildeducation/python-serverless-<X>
+- image: guildeducation/python-serverless:<X>
