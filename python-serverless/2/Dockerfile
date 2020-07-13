@@ -5,6 +5,7 @@ ENV CC_TEST_REPORTER_VERSION=0.6.2
 RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_TEST_REPORTER_VERSION}-linux-amd64 > ~/cc-test-reporter && \
     chmod +x ~/cc-test-reporter && \
     sudo mv ~/cc-test-reporter /usr/local/bin/cc-test-reporter && \
+    sudo apt-get update && \
     sudo apt-get install nodejs && \
     sudo apt-get install npm && \
     pip install -U --user pytest==5.0.1 && \
@@ -29,4 +30,5 @@ RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_T
     pip install -U --user aws-cdk.aws_secretsmanager && \
     pip install -U --user aws-cdk.aws_sns && \
     pip install -U --user aws-cdk.aws_sqs && \
-    pip install -U --user aws-cdk.aws_ssm
+    pip install -U --user aws-cdk.aws_ssm && \
+    sudo rm -rf /var/lib/apt/lists/*
