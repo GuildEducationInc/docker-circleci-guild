@@ -27,7 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e4cf4e8a-797c-4afb-9bc0-e14c46b5bc45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/alpine-qa-node/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/node-aws-qa/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/qa/node-aws-qa/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +45,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node/alpine-qa-node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/qa" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/node/alpine-qa-node" />
     </key>
@@ -61,6 +65,9 @@
       <option name="presentableId" value="Default" />
       <updated>1596130140082</updated>
       <workItem from="1596130141190" duration="2158000" />
+      <workItem from="1598559698646" duration="2072000" />
+      <workItem from="1598625231092" duration="755000" />
+      <workItem from="1598972362522" duration="2418000" />
     </task>
     <servers />
   </component>
@@ -77,6 +84,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="165" key="Vcs.Push.Dialog.v2" timestamp="1596135226208">
