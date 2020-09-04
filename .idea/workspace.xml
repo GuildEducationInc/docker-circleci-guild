@@ -26,8 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cf4e8a-797c-4afb-9bc0-e14c46b5bc45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/node-aws-qa/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/qa/node-aws-qa/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/docker-circleci-guild.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +41,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fPqabDIvBtmHTacog8WqkP10G7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,7 +71,10 @@
       <workItem from="1596130141190" duration="2158000" />
       <workItem from="1598559698646" duration="2072000" />
       <workItem from="1598625231092" duration="755000" />
-      <workItem from="1598972362522" duration="2418000" />
+      <workItem from="1598972362522" duration="3535000" />
+      <workItem from="1599053709999" duration="349000" />
+      <workItem from="1599143608377" duration="355000" />
+      <workItem from="1599228921349" duration="473000" />
     </task>
     <servers />
   </component>
