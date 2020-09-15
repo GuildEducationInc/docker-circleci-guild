@@ -47,6 +47,10 @@ jobs:
     <<: *defaults
     environment:
       TARGET_DIRECTORY: python-serverless
+  build_and_publish_qa:
+    <<: *defaults
+    environment:
+      TARGET_DIRECTORY: qa
 
 workflows:
   build_and_publish_docker_images:
@@ -57,3 +61,4 @@ workflows:
       - build_and_publish_node_lambda
       - build_and_publish_python_lambda
       - build_and_publish_python_serverless
+      - build_and_publish_qa
