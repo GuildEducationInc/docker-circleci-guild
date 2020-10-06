@@ -26,6 +26,6 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list && \
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python get-pip.py && \
     apt-get -y install python-dev && \
-    pip install awscli==1.16.170 --upgrade --user && \
-    pip install aws-sam-cli==0.16.0 && \
+    pip install awscli==1.18.153 --upgrade --user && \
+    pip install aws-sam-cli==0.23.0 && \
     rm -rf /var/lib/apt/lists/*
