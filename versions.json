@@ -2,7 +2,7 @@
   "cc_test_reporter_version": "0.7.0",
   "chromedriver_version": "2.41",
   "ruby": {
-    "versions": ["2.4.4", "2.5.1", "2.6.2", "2.6.3", "2.7.1"]
+    "versions": ["2.4.4", "2.5.1", "2.6.2", "2.6.3", "2.7.1", "2.7.2"]
   },
   "node": {
     "versions": [
