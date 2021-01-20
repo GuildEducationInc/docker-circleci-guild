@@ -11,3 +11,7 @@ RUN apk add --no-cache python py-pip
 RUN pip install awscli
 
 RUN apk add --no-cache bash
+
+RUN apk --no-cache add curl
+
+RUN apk add --no-cache jq
