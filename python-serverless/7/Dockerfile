@@ -1,8 +1,6 @@
 FROM circleci/python:3.8.6
 
-RUN addgroup cicd_user
-RUN adduser --disabled-password --gecos '' --uid 1001 cicd_user
-USER cicd_user
+RUN sudo adduser --disabled-password --gecos '' --uid 1001 cicd_user
 
 ENV PATH="/home/circleci/.local/bin:${PATH}"
 ENV CC_TEST_REPORTER_VERSION=0.6.2
@@ -16,29 +14,29 @@ RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-${CC_T
     sudo unzip awscliv2.zip && \
     sudo ./aws/install && \
     sudo pip install --upgrade pip && \
-    pip install -U --user pytest==5.0.1 && \
-    pip install -U --user boto3==1.16.58 && \
-    pip install -U --user aws-sam-cli==1.15.0 && \
-    pip install -U --user psycopg2-binary==2.8.6 && \
-    pip install -U --user Faker==4.1.1 && \
-    pip install -U --user aws-xray-sdk==2.6.0 && \
+    pip install -U pytest==5.0.1 && \
+    pip install -U boto3==1.16.58 && \
+    pip install -U aws-sam-cli==1.15.0 && \
+    pip install -U psycopg2-binary==2.8.6 && \
+    pip install -U Faker==4.1.1 && \
+    pip install -U aws-xray-sdk==2.6.0 && \
     echo "Installing CDK" && \
     sudo npm install -g aws-cdk && \
-    pip install -U --user aws-cdk.core && \
-    pip install -U --user aws-cdk.aws_apigatewayv2 && \
-    pip install -U --user aws-cdk.aws_appsync && \
-    pip install -U --user aws-cdk.aws_ec2 && \
-    pip install -U --user aws-cdk.aws-events-targets \
-    pip install -U --user aws-cdk.aws_lambda && \
-    pip install -U --user aws-cdk.aws_lambda_event_sources && \
-    pip install -U --user aws-cdk.aws_logs && \
-    pip install -U --user aws-cdk.aws_iam && \
-    pip install -U --user aws-cdk.aws_kinesis && \
-    pip install -U --user aws-cdk.aws_kinesisfirehose && \
-    pip install -U --user aws-cdk.aws_rds && \
-    pip install -U --user aws-cdk.aws_s3 && \
-    pip install -U --user aws-cdk.aws_secretsmanager && \
-    pip install -U --user aws-cdk.aws_sns && \
-    pip install -U --user aws-cdk.aws_sqs && \
-    pip install -U --user aws-cdk.aws_ssm && \
+    pip install -U aws-cdk.core && \
+    pip install -U aws-cdk.aws_apigatewayv2 && \
+    pip install -U aws-cdk.aws_appsync && \
+    pip install -U aws-cdk.aws_ec2 && \
+    pip install -U aws-cdk.aws-events-targets \
+    pip install -U aws-cdk.aws_lambda && \
+    pip install -U aws-cdk.aws_lambda_event_sources && \
+    pip install -U aws-cdk.aws_logs && \
+    pip install -U aws-cdk.aws_iam && \
+    pip install -U aws-cdk.aws_kinesis && \
+    pip install -U aws-cdk.aws_kinesisfirehose && \
+    pip install -U aws-cdk.aws_rds && \
+    pip install -U aws-cdk.aws_s3 && \
+    pip install -U aws-cdk.aws_secretsmanager && \
+    pip install -U aws-cdk.aws_sns && \
+    pip install -U aws-cdk.aws_sqs && \
+    pip install -U aws-cdk.aws_ssm && \
     sudo rm -rf /var/lib/apt/lists/*
