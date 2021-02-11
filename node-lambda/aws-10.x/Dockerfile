@@ -35,6 +35,6 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 
 # install sam cli and yarn
 RUN pip install awscli --upgrade && \
-    pip install aws-sam-cli==0.33.1 && \
+    pip install "aws-sam-cli>=1.0,<2.0" && \
     curl -o- -L https://yarnpkg.com/install.sh | bash && \
     rm -rf /var/lib/apt/lists/*
