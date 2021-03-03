@@ -23,7 +23,7 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list && \
     wget https://github.com/alexkappa/terraform-provider-auth0/releases/download/${AUTH0_PROVIDER_VERSION}/terraform-provider-auth0_${AUTH0_PROVIDER_VERSION}_linux_amd64.tar.gz && \
     tar -C ~/.terraform.d/plugins -xzf terraform-provider-auth0_${AUTH0_PROVIDER_VERSION}_linux_amd64.tar.gz && \
     rm terraform-provider-auth0_${AUTH0_PROVIDER_VERSION}_linux_amd64.tar.gz && \
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    curl https://bootstrap.pypa.io/2.7/get-pip.py -o get-pip.py && \
     python get-pip.py && \
     apt-get -y install python-dev && \
     pip install awscli==1.18.153 --upgrade --user && \
